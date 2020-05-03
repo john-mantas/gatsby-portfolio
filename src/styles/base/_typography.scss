@@ -1,0 +1,162 @@
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+html,
+body {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga" on;
+  font-kerning: normal;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  hyphens: auto;
+}
+
+input,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: sans-serif;
+  word-break: break-all;
+  word-break: break-word;
+}
+
+h1, .h1 {
+  font-size: 44px;
+  font-size: 3.14rem;
+  font-size: calc(1.5rem + 1.2vw);
+  font-weight: 900;
+  line-height: 1.28;
+  margin: 0 0 0.5em;
+}
+
+h2, .h2 {
+  font-size: 36px;
+  font-size: 2.57rem;
+  font-size: calc(1.2rem + 1vw);
+  font-weight: 900;
+  line-height: 1.36;
+  margin: 0 0 0.6em;
+}
+
+h3, .h3 {
+  font-size: 30px;
+  font-size: 2.14rem;
+  font-size: calc(1rem + 0.8vw);
+  font-weight: 900;
+  line-height: 1.44;
+  margin: 0 0 0.7em;
+}
+
+h4, .h4 {
+  font-size: 26px;
+  font-size: 1.85rem;
+  font-size: calc(1rem + 0.6vw);
+  font-weight: 700;
+  line-height: 1.52;
+  margin: 0 0 0.8em;
+}
+
+h5, .h5 {
+  font-size: 20px;
+  font-size: 1.42rem;
+  font-size: calc(0.9rem + 0.4vw);
+  margin: 0 0 0.9em;
+}
+
+h5, .h5,
+h6, .h6 {
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+h6, .h6 {
+  font-size: 15px;
+  font-size: 1.07rem;
+  font-size: calc(0.8rem + 0.2vw);
+}
+
+h6, .h6,
+p {
+  margin: 0 0 1em;
+}
+
+p {
+  font-size: 14px;
+  font-size: 1rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+blockquote p {
+  font-size: 1.2em;
+  margin: 0 0 0.5em;
+}
+
+blockquote footer {
+  font-size: 0.9em;
+}
+
+blockquote cite {
+  font-weight: bold;
+}
+
+pre,
+code {
+  font-family: monospace;
+	font-size: 16px;
+}
+
+abbr {
+  font-style: italic;
+  font-variant: none;
+}
+
+@media print {
+  * {
+    color: #000 !important;
+    background: transparent !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-after: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+}
