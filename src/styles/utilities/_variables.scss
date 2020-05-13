@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+
+// Color palette
+$majorelle-blue: #6e52e0;
+$french-blue: #0077b6;
+$turquoise: #00a896;
+
+// Color elements
+$color-black: #141414;
+$color-grey: #5d5959;
+$color-white: #f5f5f5;
+
+$color-primary: $turquoise;
+
+$color-game: $majorelle-blue;
+$color-web-app: $turquoise;
+$color-website: $french-blue;
+
+// Sizes
+$spacing-normal: 4vw;
+$length-small: 900px;
+
+// Fonts
+$font-heading: 'Noto Sans', sans-serif;
+$font-body: 'Quicksand', sans-serif;
+
+// Transitions
+$transition: 0.15s cubic-bezier(0.6, 0, 0.7, 0);

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.card-project {
+  $box-shadow: 0 0 30px -10px;
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  &:hover {
+    .gatsby-image-wrapper {
+      transform: rotate(-25deg) translate(-16%, -21%) scale(1.35);
+      filter: none;
+      opacity: 1;
+    }
+  }
+  
+  &.project--game {
+    .gatsby-image-wrapper {
+      box-shadow: $box-shadow $color-game;
+    }
+  }
+
+  &.project--web-app {
+    .gatsby-image-wrapper {
+      box-shadow: $box-shadow $color-web-app;
+    }
+  }
+
+  &.project--website {
+    .gatsby-image-wrapper {
+      box-shadow: $box-shadow $color-website;
+    }
+  }
+
+  .link-side-line {
+    align-self: flex-end;
+  }
+}
+
+.card-project__image {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  z-index: 0;
+
+  .gatsby-image-wrapper {
+    height: 100%;
+    transform: rotate(-25deg) translate(-25%, -21%) scale(1.35);
+    filter: grayscale(65%);
+    opacity: 0.3;
+    transition: $transition;
+  }
+}
+
+.card-project__body {
+  display: flex;
+  flex-direction: column;
+  margin: 5vh 0 0 12vw;
+  padding: 2vw;
+  text-align: right;
+  z-index: 1;
+}
+
+.card-project__type {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.card-project__excerpt {
+  opacity: 0.65;
+}

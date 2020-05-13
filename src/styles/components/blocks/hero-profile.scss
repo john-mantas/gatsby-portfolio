@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+@import '../../utilities/variables';
+
+.hero-profile {
+  width: 100%;
+  height: calc(100vh - #{$spacing-normal});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  .logo-personal {
+    margin-bottom: 3vh;
+    z-index: -1;
+    opacity: 0.15;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    letter-spacing: 10px;
+    
+    .name {
+      color: $color-grey;
+      font-weight: normal;
+    }
+  }
+  
+  h2 {
+    font-family: $font-body;
+    font-size: 22px;
+    font-weight: normal;
+    color: $color-primary;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero-profile {
+    align-items: initial;
+
+    .logo-personal {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      width: 50%;
+      transform: translateY(-50%);
+    }
+
+    h1 {
+      margin-left: 5vw;
+    }
+    
+    h2 {
+      margin-left: 26vw;
+    }
+  }  
+}

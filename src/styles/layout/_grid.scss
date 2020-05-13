@@ -1,0 +1,20 @@
+.container {
+  max-width: 1920px;
+  margin: auto;
+
+  .container--small {
+    max-width: 900px;
+  }
+}
+
+.grid-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-normal;
+}
+
+@media only screen and (max-width: 1023px) {
+  .grid-columns {
+    grid-template-columns: 1fr;
+  }
+}

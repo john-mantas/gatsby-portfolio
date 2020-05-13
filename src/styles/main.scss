@@ -3,6 +3,8 @@
 // 1. UTILITIES
 // ----------------------------------------------------------
 @import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'utilities/utilities';
 
 // 2. VENDORS
 // ----------------------------------------------------------
@@ -17,6 +19,7 @@
 
 // 4. LAYOUT
 // ----------------------------------------------------------
+@import 'layout/grid';
 @import 'layout/layout';
 
 // 5. COMPONENTS

@@ -1,12 +1,24 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/common/Layout'
 import Metadata from '../components/meta/MetaData'
 
+import Layout from '../components/common/Layout'
+import GridColumns from '../components/common/GridColumns'
+
+import HeroProfile from '../components/blocks/HeroProfile'
+import CardProject from '../components/elements/CardProject'
+
+import '../styles/pages/index.scss'
+import SectionHeader from '../components/elements/SectionHeader'
+
 export default ({ data, location }) => {
-  const doc = data.prismic.allProjects.edges.slice(0, 1).pop().node;
-  if (!doc) return null;
+  const PROFILE = data.prismic.allProfiles.edges.slice(0, 1).pop();
+  const PROJECTS = data.prismic.allProjects.edges;
+  console.log(PROJECTS[0].node)
+  if (!PROFILE || !PROJECTS) return null;
+
+  let allProjects = PROJECTS.map(project => <CardProject key={project.node._meta.uid} item={project} />)
 
   return (
     <>
@@ -14,7 +26,24 @@ export default ({ data, location }) => {
         location={location} 
       />
       <Layout>
-        <pre>{JSON.stringify(doc, null, 4)}</pre>
+        <article className="boundary--around">
+          <HeroProfile profile={PROFILE.node} />
+          <section>
+            <SectionHeader
+              h='Latest Projects'
+              p='See my last projects, including web apps, games, websites and more...'
+              />
+            <GridColumns>
+              {allProjects}
+            </GridColumns>
+          </section>
+          <section className="mt--large">
+            <SectionHeader
+              h='Contact Me'
+              p='Find me on social media or just send me an e-mail...'
+            />
+          </section>
+        </article>
       </Layout>
     </>
   )
@@ -23,17 +52,17 @@ export default ({ data, location }) => {
 export const query = graphql`
    {
     prismic {
-      allProjects {
-        edges {
-          node {
-            ...prismicProject
-          }
-        }
-      }
       allProfiles {
         edges {
           node {
             ...prismicProfile
+          }
+        }
+      }
+      allProjects(first: 6,  sortBy: meta_firstPublicationDate_DESC) {
+        edges {
+          node {
+            ...prismicProject
           }
         }
       }
