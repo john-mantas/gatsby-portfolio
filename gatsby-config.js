@@ -14,13 +14,25 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      }
+    },
+    {
       resolve: `gatsby-source-prismic-graphql`,
       options: {
         repositoryName: `johnmantas`,
         defaultLang: `en-us`,
-        pages: PRISMIC_PAGES
+        pages: PRISMIC_PAGES,
+        sharpKeys: [
+          /image|photo|picture/
+        ]
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,

@@ -1,4 +1,4 @@
-const PROJECT_TEMPLATE  = require.resolve('../templates/project.js');
+const PROJECT_TEMPLATE  = require.resolve('../templates/Project.js');
 
 module.exports = [
   {

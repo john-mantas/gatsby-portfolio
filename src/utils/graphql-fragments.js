@@ -6,6 +6,13 @@ export const prismicProject = graphql`
     title
     excerpt
     featured_image
+    featured_imageSharp {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
     featured_gallery {
       gallery_image
     }
@@ -52,6 +59,7 @@ export const prismicProject = graphql`
         label
         primary {
           gallery_title
+          gallery_subtitle
         }
         fields {
           gallery_image
