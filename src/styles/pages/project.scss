@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+@import '../utilities/variables';
+
+.body-project {
+  .body__image {
+    max-width: $length-small;
+    margin: 0 auto 6vh;
+  }
+}
