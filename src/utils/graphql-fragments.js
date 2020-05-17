@@ -15,9 +15,21 @@ export const prismicProject = graphql`
     }
     featured_gallery {
       gallery_image
+      gallery_imageSharp {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
     }
     featured
     project_url {
+      ... on PRISMIC__ExternalLink {
+        url
+      }
+    }
+    live_url {
       ... on PRISMIC__ExternalLink {
         url
       }

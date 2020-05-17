@@ -32,6 +32,15 @@ svg {
   height: auto;
 }
 
+button {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 abbr[title] {
   cursor: help;
 }

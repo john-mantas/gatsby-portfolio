@@ -3,17 +3,23 @@
 // Color palette
 $majorelle-blue: #6e52e0;
 $french-blue: #0077b6;
+$ice-cold: #c3f7eb;
 $turquoise: #00a896;
+$turquoise-bright: #33e1ed;
+$blue-sky: #78dbf3;
+$black-pearl: #1e1e2c;
+$black-blueberry: #2d2d44;
+$milk-glass: #fbf9f3;
 
 // Color elements
-$color-black: #141414;
+$color-black: $black-pearl;
 $color-grey: #5d5959;
-$color-white: #f5f5f5;
+$color-white: $milk-glass;
 
 $color-primary: $turquoise;
 
 $color-game: $majorelle-blue;
-$color-web-app: $turquoise;
+$color-web-app: $turquoise-bright;
 $color-website: $french-blue;
 
 // Sizes

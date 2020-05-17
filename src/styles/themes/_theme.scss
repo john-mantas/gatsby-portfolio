@@ -39,6 +39,51 @@
   }
 }
 
+.link--dotbox {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: $color-primary;
+    transition: $transition;
+  }
+  
+  &::before {
+    top: 0.5em;
+    left: 0.5em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  &:after {
+    bottom: 0.2em;
+    left: 0.75em;
+    height: 1px;
+    width: 60%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition-delay: 0.075s;
+  }
+  
+  &:hover {
+    &::before {
+      transform: translateY(1.3em) scaleX(0);
+    }
+
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
 .project--game,
 .project--web-app,
 .project--website {
