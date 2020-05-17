@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+@import '../../utilities/variables';
+
+.body__text {
+  max-width: $length-small;
+  margin: 0 auto 6vh;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-grey;
+
+    &::first-letter {
+      font-size: 1.4em;
+      color: $color-white;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    max-width: $length-text;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+  }
+}

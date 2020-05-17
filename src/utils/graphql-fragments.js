@@ -75,6 +75,13 @@ export const prismicProject = graphql`
         }
         fields {
           gallery_image
+          gallery_imageSharp {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
           image_caption
         }
       }
@@ -83,6 +90,13 @@ export const prismicProject = graphql`
         label
         fields {
           image
+          imageSharp {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
         }
       }
     }
