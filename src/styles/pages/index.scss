@@ -1,1 +1,37 @@
 @charset "UTF-8";
+@import '../utilities/variables';
+
+.home-contact {
+  .grid-columns {
+    align-items: center;
+    justify-items: center;
+  }
+
+  li {
+    position: relative;
+    width: max-content;
+    padding: 1em 3em;
+    overflow: hidden;
+
+    &:nth-child(n+1) {
+      padding-left: calc(2em * var(--nth-child));
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: calc(10% * var(--nth-child));
+      width: 40%;
+      height: 95%;
+      background: linear-gradient(20deg, rgba($color: $color-primary, $alpha: 0.1) 10%, transparent 50%);
+      transition: $transition;
+    }
+    
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}

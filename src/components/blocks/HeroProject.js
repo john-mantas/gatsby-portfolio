@@ -18,8 +18,8 @@ const HeroProject = ({ item }) => {
             <h1 className="hero-project__title">{item.title[0].text}</h1>
             <p className="hero-project__description">{item.excerpt}</p>
             <div className="hero-project__links">
-              {item.project_url && <a href={item.project_url.url} title="Code files" className="link--dotbox">Read the code</a>}
-              {item.live_url && <a href={item.live_url.url} title="Live preview" className="link--dotbox">See it live</a>}
+              {item.project_url && <a href={item.project_url.url} title="Code files" className="link--dot">Read the code</a>}
+              {item.live_url && <a href={item.live_url.url} title="Live preview" className="link--dot">See it live</a>}
             </div>
           </div>
         </header>
