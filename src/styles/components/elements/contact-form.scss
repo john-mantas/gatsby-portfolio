@@ -27,8 +27,7 @@
     color: $color-white;
     border: 0;
     background: none;
-    background-color: #fff1;
-    border-top: 1px solid rgba($color-primary, $alpha: 0.3);
+    background: linear-gradient(45deg, #fff1, transparent);
   }
 
   button {

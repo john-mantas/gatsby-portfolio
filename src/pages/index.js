@@ -19,7 +19,13 @@ export default ({ data, location }) => {
   if (!PROFILE || !PROJECTS) return null;
 
   let allProjects = PROJECTS.map(project => <CardProject key={project.node._meta.uid} item={project} />)
-  let allProfileLinks = PROFILE.node.link_list.map((link, index) => <li key={link.address.url} style={{'--nth-child': index+1}}><a href={link.address.url} className="link--dot h6" title="john mantas profile" target="_blank" rel="nofollow">{new URL(link.address.url).hostname.replace('www.', '')}</a></li>)
+  let allProfileLinks = PROFILE.node.link_list.map(link => (
+    <li key={link.address.url}>
+      <a href={link.address.url} className="link--dot h6" title="john mantas profile" target="_blank" rel="nofollow noopener noreferrer">
+        {new URL(link.address.url).hostname.replace('www.', '')}
+      </a>
+    </li>
+  ))
 
   return (
     <>
@@ -64,7 +70,7 @@ export const query = graphql`
           }
         }
       }
-      allProjects(first: 6,  sortBy: meta_firstPublicationDate_DESC) {
+      allProjects(first: 4,  sortBy: meta_firstPublicationDate_DESC) {
         edges {
           node {
             ...prismicProject

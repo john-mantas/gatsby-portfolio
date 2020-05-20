@@ -2,6 +2,7 @@
 @import '../../utilities/variables';
 
 .hero-profile {
+  position: relative;
   width: 100%;
   height: calc(100vh - #{$spacing-normal});
   display: flex;
