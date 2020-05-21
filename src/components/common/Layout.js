@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 
 import { siteLang } from '../../utils/site-config'
 
+import Footer from './Footer'
+
 import Logo from '../elements/Logo'
 
 import '../../styles/main.scss'
@@ -28,7 +30,7 @@ const Layout = ({ children }) => {
           {children}
         </main>
 
-        <footer className="site-footer"></footer>
+        <Footer />
 
       </div>
     </>

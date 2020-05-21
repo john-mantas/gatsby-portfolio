@@ -58,7 +58,8 @@
 .card-project__body {
   display: flex;
   flex-direction: column;
-  margin: 5vh 0 0 12vw;
+  max-width: 70%;
+  margin: 5vh 0 0 auto;
   padding: 2vw;
   text-align: right;
   z-index: 1;
