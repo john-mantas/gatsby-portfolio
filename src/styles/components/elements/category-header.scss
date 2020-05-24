@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+@import '../../utilities/variables';
+
+.category-header {
+  padding: $spacing-normal;
+}
+
+.category-header__page-counter {
+  margin-bottom: 0;
+  
+  sup {
+    font-size: 0.55em;
+    font-weight: normal;
+    color: $color-grey;
+  }
+}
+
+.category-header__title {
+  color: $color-primary;
+}
+
+.category-header__description {
+  position: relative;
+  max-width: $length-text;
+  padding: 1vh 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 95%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $color-primary;
+    opacity: 0.15;
+  }
+
+  margin-left: 6vw;
+  padding-left: 1vw;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 6vw;
+    height: 1px;
+    background-color: $color-grey;
+  }
+}
