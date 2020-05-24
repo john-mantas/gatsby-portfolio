@@ -1,4 +1,5 @@
-const PROJECT_TEMPLATE  = require.resolve('../templates/Project.js');
+const path = require(`path`)
+const PROJECT_TEMPLATE  = path.join(__dirname, '../templates', 'Project.js');
 
 module.exports = [
   {
