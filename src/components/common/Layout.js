@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <html lang={siteLang} />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Quicksand:wght@300;400&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&family=Quicksand:wght@300;400&display=swap" rel="stylesheet" />
       </Helmet>
 
       <div className="site-body">

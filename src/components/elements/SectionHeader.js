@@ -2,11 +2,11 @@ import React from 'react'
 
 import '../../styles/components/elements/section-header.scss'
 
-const SectionHeader = ({ h, p }) => {
+const SectionHeader = ({ title, description }) => {
   return(
     <header className="section-header">
-      <h2 className="section-header__heading h1">{h}</h2>
-      {p && <p className="section-header__paragraph">{p}</p>}
+      <h2 className="section-header__heading h1">{title}</h2>
+      {description && <p className="section-header__paragraph">{description}</p>}
     </header>
   )
 }

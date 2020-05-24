@@ -38,8 +38,8 @@ export default ({ data, location }) => {
           <HeroProfile profile={PROFILE.node} />
           <section>
             <SectionHeader
-              h='Latest Projects'
-              p='See my last projects, including web apps, games, websites and more...'
+              title='Latest Projects'
+              description='See my last projects, including web apps, games, websites and more...'
               />
             <GridColumns>
               {allProjects}
@@ -50,8 +50,8 @@ export default ({ data, location }) => {
           </section>
           <section className="home-contact mt--large">
             <SectionHeader
-              h='Contact Me'
-              p='Find me on social media or just send me an e-mail...'
+              title='Contact Me'
+              description='Find me on social media or just send me an e-mail...'
             />
             <GridColumns>
               <ul className="list--clean">{allProfileLinks}</ul>

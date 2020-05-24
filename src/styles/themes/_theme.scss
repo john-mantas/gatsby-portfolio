@@ -91,13 +91,13 @@
   align-items: center;
   padding: 10px;
   
-  svg {
+  .icon {
     margin-left: 5px;
     transition: $transition;
   }
 
   &:hover {
-    svg{
+    .icon{
       transform: translateX(5px);
     }
   }
@@ -178,21 +178,6 @@
 
 .project--website {
   @include project-type-color-customize(65deg, $color-website);
-}
-
-.dec-background-code {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80vw;
-  max-height: 100vh;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  opacity: 0.02;
-  overflow: hidden;
-  pointer-events: none;
-  columns: 2;
-  white-space: pre-wrap;
 }
 
 // Lists

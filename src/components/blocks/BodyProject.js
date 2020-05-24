@@ -6,7 +6,6 @@ const BodyProject = ({ body }) => {
   let bodyContent = body.map((slice, index) => {
     let sliceKey = slice.type + index
 
-    console.log(slice)
     switch(slice.type) {
       case 'text':
         return <Text key={sliceKey} content={slice} />

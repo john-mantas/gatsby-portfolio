@@ -22,7 +22,6 @@ class SliderHeroProject extends React.Component {
   }
 
   render() {
-    console.log(this.props.item)
     let sliderContent = this.props.item.featured_gallery.map(image => <Img key={image.gallery_image.url} fluid={image.gallery_imageSharp.childImageSharp.fluid} alt={image.gallery_image.alt} />)
     const sliderOptions = {
       className: 'featured-slider',
@@ -38,10 +37,10 @@ class SliderHeroProject extends React.Component {
           {sliderContent}
         </Slider>
         <div className="featured-slider__arrows">
-          <button className="featured-slider__arrow arrow--prev" onClick={this.previousSlide}>
+          <button className="featured-slider__arrow btn--square" onClick={this.previousSlide}>
             <ArrowLeftThin fill="#fff" />
           </button>
-          <button className="featured-slider__arrow arrow--next" onClick={this.nextSlide}>
+          <button className="featured-slider__arrow btn--square" onClick={this.nextSlide}>
             <ArrowRightThin fill="#fff" />
           </button>
         </div>

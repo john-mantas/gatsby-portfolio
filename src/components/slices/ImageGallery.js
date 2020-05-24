@@ -11,8 +11,8 @@ const ImageGallery = ({ content }) => {
   return (
     <section className="body-project__image-gallery">
       <SectionHeader
-        h={content.primary.gallery_title[0].text}
-        p={content.primary.gallery_subtitle}
+        title={content.primary.gallery_title[0].text}
+        description={content.primary.gallery_subtitle}
       />
       <GalleryMasonry fields={content.fields} />
     </section>
