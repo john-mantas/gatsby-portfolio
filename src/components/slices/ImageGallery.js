@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SectionHeader from '../elements/SectionHeader'
-import GallerySlider from '../elements/SliderBodyProject'
+import GalleryMasonry from '../elements/GalleryMasonry'
 
 import '../../styles/components/blocks/body-project-image-gallery.scss'
 
@@ -14,7 +14,7 @@ const ImageGallery = ({ content }) => {
         h={content.primary.gallery_title[0].text}
         p={content.primary.gallery_subtitle}
       />
-      <GallerySlider fields={content.fields} />
+      <GalleryMasonry fields={content.fields} />
     </section>
   )
 }

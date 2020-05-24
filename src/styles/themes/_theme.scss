@@ -202,3 +202,35 @@
   margin-left: 0;
   padding-left: 0;
 }
+
+// Images / Figures
+// =====================
+.figure-caption {
+  position: relative;
+  overflow: hidden;
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background: #0003;
+    backdrop-filter: blur(3px);
+    transform: translateY(100%);
+    transition: $transition;
+
+    p {
+      margin-bottom: 0;
+      line-height: 1.5;
+      text-shadow: 0 0 4px #000;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    figcaption {
+      transform: translateY(0);
+    }
+  }
+}
