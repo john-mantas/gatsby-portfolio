@@ -1,16 +1,16 @@
 @charset 'UTF-8';
 @import '../../utilities/variables';
 
-.section-header {
+.header-section {
   margin: 3vh 0 6vh 0;
 }
 
-.section-header__heading {
+.header-section__heading {
   margin-bottom: 0;
   color: $color-grey;
 }
 
-.section-header__paragraph {
+.header-section__paragraph {
   position: relative;
   margin-left: 6vw;
   padding-left: 1vw;

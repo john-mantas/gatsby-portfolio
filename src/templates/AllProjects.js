@@ -5,10 +5,10 @@ import Metadata from '../components/meta/MetaData'
 
 import Layout from '../components/common/Layout'
 import GridColumns from '../components/common/GridColumns'
+import Pagination from '../components/common/Pagination'
 
-import CategoryHeader from '../components/elements/CategoryHeader'
+import HeaderCategory from '../components/elements/HeaderCategory'
 import CardProject from '../components/elements/CardProject'
-import Pagination from '../components/elements/Pagination'
 
 export default ({ data, location, pageContext }) => {
   const PROJECTS = data.prismic.allProjects.edges;
@@ -22,7 +22,7 @@ export default ({ data, location, pageContext }) => {
         location={location}
       />
       <Layout>
-        <CategoryHeader
+        <HeaderCategory
           title='All Projects'
           description='Web apps, games, websites and more...'
           pageContext={pageContext}

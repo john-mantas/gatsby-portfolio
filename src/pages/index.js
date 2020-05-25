@@ -7,7 +7,7 @@ import Layout from '../components/common/Layout'
 import GridColumns from '../components/common/GridColumns'
 
 import HeroProfile from '../components/blocks/HeroProfile'
-import SectionHeader from '../components/elements/SectionHeader'
+import HeaderSection from '../components/elements/HeaderSection'
 import CardProject from '../components/elements/CardProject'
 import { ArrowRightThin } from '../components/elements/Icons'
 import ContactForm from '../components/elements/ContactForm'
@@ -37,7 +37,7 @@ export default ({ data, location }) => {
         <article className="boundary--around">
           <HeroProfile profile={PROFILE.node} />
           <section>
-            <SectionHeader
+            <HeaderSection
               title='Latest Projects'
               description='See my last projects, including web apps, games, websites and more...'
               />
@@ -49,7 +49,7 @@ export default ({ data, location }) => {
             </div>
           </section>
           <section className="home-contact mt--large">
-            <SectionHeader
+            <HeaderSection
               title='Contact Me'
               description='Find me on social media or just send me an e-mail...'
             />

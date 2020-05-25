@@ -1,11 +1,11 @@
 @charset 'UTF-8';
 @import '../../utilities/variables';
 
-.category-header {
+.header-category {
   padding: $spacing-normal;
 }
 
-.category-header__page-counter {
+.header-category__page-counter {
   margin-bottom: 0;
   
   sup {
@@ -15,11 +15,11 @@
   }
 }
 
-.category-header__title {
+.header-category__title {
   color: $color-primary;
 }
 
-.category-header__description {
+.header-category__description {
   position: relative;
   max-width: $length-text;
   padding: 1vh 0;
