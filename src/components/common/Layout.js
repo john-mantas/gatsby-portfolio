@@ -7,7 +7,7 @@ import { siteLang } from '../../utils/site-config'
 import Footer from './Footer'
 
 import Logo from '../elements/Logo'
-import PageProgress from '../elements/pageProgress'
+import PageProgress from '../elements/PageProgress'
 
 import '../../styles/main.scss'
 
