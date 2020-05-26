@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+@import '../../utilities/variables';
+
+.page-progress {
+  position: fixed;
+  z-index: 1000;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px 0 #0000;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  &.scrolling {
+    &::after {
+      box-shadow: 0 0 17px -1px $color-primary, 0 0 4px $color-primary;
+    }
+  }
+}
+
+.page-progress--vertical {
+  top: 0;
+  left: -4px;
+  width: 5px;
+  height: 100%;
+
+  &::after {
+    transform-origin: top center;
+    border-right: 1px solid $color-primary;
+    transform: scaleY(var(--progress));
+  }
+}
+
+.page-progress--horizontal {
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+
+  &::after {
+    transform-origin: center left;
+    border-top: 1px solid $color-primary;
+    transform: scaleX(var(--progress));
+  }
+}

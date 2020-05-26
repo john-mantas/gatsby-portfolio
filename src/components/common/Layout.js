@@ -7,6 +7,7 @@ import { siteLang } from '../../utils/site-config'
 import Footer from './Footer'
 
 import Logo from '../elements/Logo'
+import PageProgress from '../elements/pageProgress'
 
 import '../../styles/main.scss'
 
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
       </Helmet>
 
       <div className="site-body">
+      <PageProgress direction="horizontal" />
 
         <header className="site-header">
           <Link to='/' className="site-logo">
