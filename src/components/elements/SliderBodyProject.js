@@ -1,8 +1,8 @@
 import React from 'react'
 import { RichText } from 'prismic-reactjs'
 import Slider from 'react-slick'
-import Img from 'gatsby-image'
 
+import ZoomImage from '../elements/ZoomImage'
 import { ArrowRightThin, ArrowLeftThin } from '../elements/Icons'
 
 import '../../styles/components/elements/slider-body-project.scss'
@@ -39,13 +39,13 @@ class SliderHeroProject extends React.Component {
     }
 
     let fields = this.props.fields.map(field => {
-      let hasImageCaption = field.image_caption && field.image_caption[0].text !== ''
-
       return (
-        <figure key={field.gallery_image.url}>
-          <Img fluid={field.gallery_imageSharp.childImageSharp.fluid} alt={field.gallery_image.alt} />
-          {hasImageCaption && <figcaption>{RichText.render(field.image_caption)}</figcaption>}
-        </figure>
+        <ZoomImage
+          key={field.gallery_image.url}
+          image={field.gallery_image}
+          imageSharp={field.gallery_imageSharp}
+          figcaption={RichText.render(field.image_caption)}
+        />
       )
     })
 

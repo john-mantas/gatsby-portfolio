@@ -1,8 +1,17 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import ZoomImage from '../elements/ZoomImage'
 
 const Image = ({ content }) => {
-  return (content.fields.map(field => <Img key={field.image.url} fluid={field.imageSharp.childImageSharp.fluid} alt={field.image.alt} className="body__image" />))
+  return (
+    content.fields.map(field => {
+      return <ZoomImage
+        key={field.image.url}
+        image={field.image}
+        imageSharp={field.imageSharp}
+        figureClass="body__image"
+      />
+    })
+  )
 }
 
 export default Image

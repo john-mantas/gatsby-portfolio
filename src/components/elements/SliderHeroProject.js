@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
-import Img from 'gatsby-image'
 
+import ZoomImage from '../elements/ZoomImage'
 import { ArrowRightThin, ArrowLeftThin } from '../elements/Icons'
 
 import '../../styles/components/elements/slider-hero-project.scss'
@@ -22,7 +22,13 @@ class SliderHeroProject extends React.Component {
   }
 
   render() {
-    let sliderContent = this.props.item.featured_gallery.map(image => <Img key={image.gallery_image.url} fluid={image.gallery_imageSharp.childImageSharp.fluid} alt={image.gallery_image.alt} />)
+    let sliderContent = this.props.item.featured_gallery.map(image => {
+      return <ZoomImage
+        key={image.gallery_image.url}
+        image={image.gallery_image}
+        imageSharp={image.gallery_imageSharp}
+      />
+    })
     const sliderOptions = {
       className: 'featured-slider',
       lazyload: 'ondemand',

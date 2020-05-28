@@ -1,0 +1,16 @@
+[data-rmiz-wrap='visible'],
+[data-rmiz-wrap='hidden'] {
+  display: block !important;
+}
+
+[data-rmiz-overlay] {
+  backdrop-filter: blur(5px) grayscale(0.7);
+
+  .gatsby-image-wrapper {
+    max-height: 100%;
+  }
+
+  img {
+    object-fit: contain !important;
+  }
+}

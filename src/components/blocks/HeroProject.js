@@ -1,7 +1,7 @@
 import React from 'react'
 
 import FeaturedSlider from '../elements/SliderHeroProject'
-import FeaturedImage from '../elements/FeaturedImage'
+import ZoomImage from '../elements/ZoomImage'
 
 import '../../styles/components/blocks/hero-project.scss'
 
@@ -27,9 +27,10 @@ const HeroProject = ({ item }) => {
           ? <FeaturedSlider
               item={item}
             />
-          : <FeaturedImage
+          : <ZoomImage
+              image={item.featured_image}
+              imageSharp={item.featured_imageSharp}
               figureClass='hero-project__featured-media'
-              item={item}
             />
         }
       </div>
