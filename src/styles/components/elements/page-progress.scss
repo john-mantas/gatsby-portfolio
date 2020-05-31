@@ -5,6 +5,7 @@
   position: fixed;
   z-index: 1000;
 
+  &::before,
   &::after {
     content: "";
     position: absolute;
@@ -12,7 +13,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 10px 0 #0000;
     transition: box-shadow 0.3s ease-in-out;
   }
   
@@ -29,6 +29,10 @@
   width: 5px;
   height: 100%;
 
+  &::before {
+    border-right: 1px solid $color-dark;
+  }
+
   &::after {
     transform-origin: top center;
     border-right: 1px solid $color-primary;
@@ -41,6 +45,10 @@
   left: 0;
   width: 100%;
   height: 5px;
+
+  &::before {
+    border-top: 1px solid $color-dark;
+  }
 
   &::after {
     transform-origin: center left;

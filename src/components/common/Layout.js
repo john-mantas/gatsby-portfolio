@@ -1,32 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
 
 import { siteLang } from '../../utils/site-config'
 
+import Header from './Header'
+import Menu from './Menu'
 import Footer from './Footer'
-
-import Logo from '../elements/Logo'
-import PageProgress from '../elements/PageProgress'
 
 import '../../styles/main.scss'
 
 const Layout = ({ children }) => {
+  let [isMenuActive, setMenuActive] = useState(false)
+
+  let toggleMenu = () => {
+    setMenuActive(!isMenuActive)
+  }
+
   return(
     <>
       <Helmet>
         <html lang={siteLang} />
         <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&family=Quicksand:wght@300;400&display=swap" rel="stylesheet" />
+        <body {...(isMenuActive ? {className: 'site-menu--active'} : {})} />
       </Helmet>
 
-      <div className="site-body">
-      <PageProgress direction="horizontal" />
+      <Header toggleMenu={toggleMenu} />
+      <Menu />
 
-        <header className="site-header">
-          <Link to='/' className="site-logo">
-            <Logo />
-          </Link>
-        </header>
+      <div className="site-body">
 
         <main className="site-main">
           {children}

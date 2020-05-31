@@ -7,6 +7,7 @@ $ice-cold: #c3f7eb;
 $turquoise: #00a896;
 $turquoise-bright: #33e1ed;
 $blue-sky: #78dbf3;
+$rich-black: #0d0d0d;
 $black-pearl: #1e1e2c;
 $black-blueberry: #2d2d44;
 $sonic-silver: #757780;
@@ -14,7 +15,8 @@ $light-grey: #cbd2d0;
 $milk-glass: #fbf9f3;
 
 // Color elements
-$color-black: $black-pearl;
+$color-black: $rich-black;
+$color-dark: $black-pearl;
 $color-grey: $sonic-silver;
 $color-grey-light: $light-grey;
 $color-white: $milk-glass;
@@ -30,9 +32,15 @@ $spacing-normal: 4vw;
 $length-small: 900px;
 $length-text: 730px;
 
+$sidebar-length: 54px;
+
 // Fonts
 $font-heading: 'Prompt', sans-serif;
 $font-body: 'Quicksand', sans-serif;
 
+// Easings
+$easeInQuint: cubic-bezier(0.6, 0, 0.7, 0);
+$easeOutQuint: cubic-bezier(0.2, 1, 0.4, 1);
+
 // Transitions
-$transition: 0.15s cubic-bezier(0.6, 0, 0.7, 0);
+$transition: 0.15s $easeInQuint;

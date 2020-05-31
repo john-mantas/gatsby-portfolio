@@ -3,4 +3,7 @@ import React from 'react'
 const ArrowRightThin = ({ fill }) => (<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className="icon icon-arrow-thin-right" fill={fill} fillRule="evenodd" clipRule="evenodd" aria-hidden="true" focusable="false" role="presentation"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" /></svg>)
 const ArrowLeftThin = ({ fill }) => (<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className="icon icon-arrow-thin-left" fill={fill} fillRule="evenodd" clipRule="evenodd" aria-hidden="true" focusable="false" role="presentation"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z" /></svg>)
 
-export { ArrowRightThin, ArrowLeftThin }
+const HamburgerMenu = ({ fill }) => (<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className="icon icon-hamburger-menu" fill={fill} fillRule="evenodd" clipRule="evenodd" aria-hidden="true" focusable="false" role="presentation"><path d="M24 18v1h-24v-1h24zm0-6v1h-24v-1h24zm0-6v1h-24v-1h24z" fill="#1040e2" /><path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z" /></svg>)
+const CloseThin = ({ fill }) => (<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className="icon icon-close-thin" fill={fill}  fillRule="evenodd" clipRule="evenodd" aria-hidden="true" focusable="false" role="presentation"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" /></svg>)
+
+export { ArrowRightThin, ArrowLeftThin, HamburgerMenu, CloseThin }

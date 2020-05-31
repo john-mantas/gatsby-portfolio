@@ -1,0 +1,77 @@
+@charset 'UTF-8';
+@import '../../utilities/variables';
+
+.site-header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: $sidebar-length;
+  background-color: rgba($color-black, $alpha: 0.35);
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+  z-index: 3000;
+  transition: $transition;
+}
+
+.site-logo {
+  display: flex;
+  margin: 1rem;
+  height: calc(#{$sidebar-length} - 2rem);
+
+  svg {
+    width: auto;
+    height: 100%;
+    fill: $color-white;
+  }
+}
+
+.site-menu__btn {
+  position: relative;
+  width: $sidebar-length;
+  height: $sidebar-length;
+  overflow: hidden;
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    transition: $transition;
+  }
+
+  .icon-close-thin {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.site-menu--active {
+  .site-menu__btn {
+    .icon-hamburger-menu {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    .icon-close-thin {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .site-header {
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    margin: 1rem 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .site-header {
+    top: 0;
+    right: 0;
+    margin: 1rem;
+  }
+}
