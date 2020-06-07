@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+@import '../../utilities/variables';
+
+.header-page {
+  margin-bottom: $spacing-large;
+  text-align: center;
+}
+
+.header-page__title {
+  position: relative;
+  margin-bottom: 0.2em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid $color-grey;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 15%;
+    width: 5%;
+    height: 1px;
+    background-color: $color-dark;
+  }
+}
+
+.header-page__description {
+  font-weight: bold;
+  color: $color-grey;
+}

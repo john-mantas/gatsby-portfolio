@@ -1,0 +1,70 @@
+@charset 'UTF-8';
+@import "../../utilities/variables";
+
+.profile-links {
+  position: relative;
+  max-width: 550px;
+  width: max-content;
+  margin: auto;
+  padding: 8vw;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid $color-primary;
+    transform: rotate(-15deg);
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  &::after {
+    border-width: 3px;
+    transform: rotate(-35deg);
+    opacity: 0.1;
+  }
+
+  li {
+    position: relative;
+    width: max-content;
+    padding: 1em 3em;
+    overflow: hidden;
+
+    &:nth-child(2n) {
+      margin-left: 2em;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 10%;
+      width: 40%;
+      height: 95%;
+      background: linear-gradient(20deg, rgba($color-grey, $alpha: 0.1) 10%, transparent 50%);
+      transition: $transition;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .profile-links {
+    margin: 8vh auto;
+
+    &::before,
+    &::after {
+      top: -2.4vh;
+    }
+  }
+}

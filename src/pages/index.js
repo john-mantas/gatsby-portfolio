@@ -10,6 +10,7 @@ import HeroProfile from '../components/blocks/HeroProfile'
 import HeaderSection from '../components/elements/HeaderSection'
 import CardProject from '../components/elements/CardProject'
 import { ArrowRightThin } from '../components/elements/Icons'
+import ProfileLinks from '../components/elements/ProfileLinks'
 import ContactForm from '../components/elements/ContactForm'
 
 import '../styles/pages/index.scss'
@@ -20,13 +21,6 @@ export default ({ data, location }) => {
   if (!PROFILE || !PROJECTS) return null;
 
   let allProjects = PROJECTS.map(project => <CardProject key={project.node._meta.uid} item={project} />)
-  let allProfileLinks = PROFILE.node.link_list.map(link => (
-    <li key={link.address.url}>
-      <a href={link.address.url} className="link--dot h6" title="john mantas profile" target="_blank" rel="nofollow noopener noreferrer">
-        {new URL(link.address.url).hostname.replace('www.', '')}
-      </a>
-    </li>
-  ))
 
   return (
     <>
@@ -54,7 +48,7 @@ export default ({ data, location }) => {
               description='Find me on social media or just send me an e-mail...'
             />
             <GridColumns>
-              <ul className="list--clean">{allProfileLinks}</ul>
+              <ProfileLinks profile={PROFILE} />
               <ContactForm />
             </GridColumns>
           </section>

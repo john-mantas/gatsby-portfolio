@@ -9,6 +9,7 @@ import SocialMeta from './SocialMeta'
 import WebsiteSchema from './WebsiteSchema'
 import CreativeWorkSchema from './CreativeWorkSchema'
 import PersonSchema from './PersonSchema'
+import ContactPageSchema from './ContactPageSchema'
 
 const MetaData = ({ doc, title, description, settings, location }) => {
   title = title || (doc && (doc.meta_title || doc.title[0].text)) || config.siteName
@@ -19,7 +20,7 @@ const MetaData = ({ doc, title, description, settings, location }) => {
   imageData.url = (image && image.url) ? image.url : config.defaultImage
   imageData.width = (image && image.dimensions) ? image.dimensions.width : config.defaultImageWidth
   imageData.height = (image && image.dimensions) ? image.dimensions.height : config.defaultImageHeight
-  imageData.alt = (image && image.alt && image.alt !== '') ? image.alt : null
+  imageData.alt = (image && image.alt && image.alt !== '') ? image.alt : config.defaultImageAlt
 
   let canonical = url.resolve(config.siteUrl, location.pathname)
   let profile = settings.prismic.allProfiles.edges[0].node
@@ -60,6 +61,15 @@ const MetaData = ({ doc, title, description, settings, location }) => {
       {schemaMarkup}
 
       <PersonSchema profile={profile} />
+
+      {location.pathname === '/contact/' &&
+        <ContactPageSchema
+          title="Contact"
+          description="Find me on social media or just send me an e-mail"
+          image={imageData}
+          canonical={canonical}
+        />
+      }
     </>
   )
 }
