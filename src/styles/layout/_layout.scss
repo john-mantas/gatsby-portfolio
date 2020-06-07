@@ -13,8 +13,10 @@
   min-height: 100vh;
   background-color: $color-dark;
   overflow: hidden;
+  transform: translateX(0);
   transition: 0.25s;
   z-index: 2000;
+  will-change: transform;
 }
 
 body.site-menu--active {

@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from 'react-slick'
 
 import ZoomImage from '../elements/ZoomImage'
-import { ArrowRightThin, ArrowLeftThin } from '../elements/Icons'
+import { ArrowRightThin, ArrowLeftThin } from '../common/Icons'
 
 import '../../styles/components/elements/slider-hero-project.scss'
 

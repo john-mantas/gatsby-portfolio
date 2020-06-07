@@ -12,5 +12,6 @@ module.exports = {
 
   defaultImage: 'https://johnmantas.com/images/jm-logo-black-bg-512.png',
   defaultImageWidth: '512',
-  defaultImageHeight: '512'
+  defaultImageHeight: '512',
+  defaultImageAlt: 'John Mantas'
 }

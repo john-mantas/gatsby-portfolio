@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { ArrowRightThin, ArrowLeftThin } from '../elements/Icons'
+import { ArrowRightThin, ArrowLeftThin } from '../common/Icons'
 
 import '../../styles/components/elements/pagination.scss'
 

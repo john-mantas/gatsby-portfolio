@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Logo from '../elements/Logo'
-import { HamburgerMenu, CloseThin } from '../elements/Icons'
+import Logo from './Logo'
+import { HamburgerMenu, CloseThin } from './Icons'
 import PageProgress from '../elements/PageProgress'
 
 import '../../styles/components/blocks/header.scss'

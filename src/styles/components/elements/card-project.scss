@@ -9,29 +9,15 @@
   display: flex;
   overflow: hidden;
 
+  .gatsby-image-wrapper {
+    box-shadow: $box-shadow var(--project-color);
+  }
+
   &:hover {
     .gatsby-image-wrapper {
       transform: rotate(-25deg) translate(-16%, -21%) scale(1.35);
       filter: none;
       opacity: 1;
-    }
-  }
-  
-  &.project--game {
-    .gatsby-image-wrapper {
-      box-shadow: $box-shadow $color-game;
-    }
-  }
-
-  &.project--web-app {
-    .gatsby-image-wrapper {
-      box-shadow: $box-shadow $color-web-app;
-    }
-  }
-
-  &.project--website {
-    .gatsby-image-wrapper {
-      box-shadow: $box-shadow $color-website;
     }
   }
 

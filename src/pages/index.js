@@ -9,7 +9,7 @@ import GridColumns from '../components/common/GridColumns'
 import HeroProfile from '../components/blocks/HeroProfile'
 import HeaderSection from '../components/elements/HeaderSection'
 import CardProject from '../components/elements/CardProject'
-import { ArrowRightThin } from '../components/elements/Icons'
+import { ArrowRightThin } from '../components/common/Icons'
 import ProfileLinks from '../components/elements/ProfileLinks'
 import ContactForm from '../components/elements/ContactForm'
 

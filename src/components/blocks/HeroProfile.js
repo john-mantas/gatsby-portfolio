@@ -1,7 +1,7 @@
 import React from 'react'
 import { RichText } from 'prismic-reactjs'
 
-import Logo from '../elements/Logo'
+import Logo from '../common/Logo'
 
 import '../../styles/components/blocks/hero-profile.scss'
 
