@@ -19,7 +19,11 @@ export default ({ data, location, pageContext }) => {
   return (
     <>
       <Metadata
+        title='All Projects'
+        description='Web apps, games, websites and more'
         location={location}
+        type='category'
+        listItems={{ items: PROJECTS }}
       />
       <Layout>
         <HeaderCategory

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 
 import { siteUrl } from '../../utils/site-config'
 
-const CreativeWorkSchema = ({ title, image, profile }) => {
+const CreativeWorkSchema = ({ title, description, image, profile, canonical }) => {
   let sameAsLinks = profile.link_list.map(link=>`"${link.address.url}"`)
 
   return (
@@ -13,6 +13,10 @@ const CreativeWorkSchema = ({ title, image, profile }) => {
           "@context": "http://schema.org",
           "@type": "CreativeWork",
           "name": "${title}",
+          "alternateName": "${title} | ${profile.full_name[0].text}",
+          "headline": "${title}",
+          "alternativeHeadline": "${title} | ${profile.full_name[0].text}",
+          "description": "${description}",
           "image": {
             "@type": "ImageObject",
             "url": "${image.url}",
@@ -33,7 +37,8 @@ const CreativeWorkSchema = ({ title, image, profile }) => {
             },
             "sameAs": [${sameAsLinks}],
             "jobTitle": "${profile.role[0].text}"
-          }
+          },
+          "url": "${canonical}"
         }
       `}</script>
     </Helmet>

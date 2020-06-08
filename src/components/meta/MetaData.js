@@ -8,10 +8,12 @@ import SiteMeta from './SiteMeta'
 import SocialMeta from './SocialMeta'
 import WebsiteSchema from './WebsiteSchema'
 import CreativeWorkSchema from './CreativeWorkSchema'
+import CreativeWorkSeriesSchema from './CreativeWorkSeriesSchema'
 import PersonSchema from './PersonSchema'
+import OrganizationSchema from './OrganizationSchema'
 import ContactPageSchema from './ContactPageSchema'
 
-const MetaData = ({ doc, title, description, settings, location }) => {
+const MetaData = ({ doc, title, description, settings, location, type, listItems }) => {
   title = title || (doc && (doc.meta_title || doc.title[0].text)) || config.siteName
   description = description || (doc && (doc.meta_description || doc.excerpt)) || config.siteDescription
 
@@ -24,15 +26,35 @@ const MetaData = ({ doc, title, description, settings, location }) => {
 
   let canonical = url.resolve(config.siteUrl, location.pathname)
   let profile = settings.prismic.allProfiles.edges[0].node
-  let type = doc && doc._meta.type
+  type = type || (doc && doc._meta.type)
 
   let schemaMarkup
   if (type === 'project') {
     schemaMarkup = <CreativeWorkSchema 
       title={title}
+      description={description}
       image={imageData}
       profile={profile}
+      canonical={canonical}
     />
+  } else if (type === 'category') {
+    schemaMarkup = <CreativeWorkSeriesSchema
+      title={title}
+      description={description}
+      image={imageData}
+      canonical={canonical}
+      listItems={listItems}
+    />
+  } else if (type === 'contact') {
+    schemaMarkup = <>
+      <OrganizationSchema profile={profile} />
+      <ContactPageSchema
+        title={title}
+        description={description}
+        image={imageData}
+        canonical={canonical}
+      />
+    </>
   } else {
     schemaMarkup = <WebsiteSchema
       title={title}
@@ -61,15 +83,6 @@ const MetaData = ({ doc, title, description, settings, location }) => {
       {schemaMarkup}
 
       <PersonSchema profile={profile} />
-
-      {location.pathname === '/contact/' &&
-        <ContactPageSchema
-          title="Contact"
-          description="Find me on social media or just send me an e-mail"
-          image={imageData}
-          canonical={canonical}
-        />
-      }
     </>
   )
 }

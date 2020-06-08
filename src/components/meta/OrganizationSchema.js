@@ -1,33 +1,32 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { siteUrl } from '../../utils/site-config'
+import { siteName, siteUrl } from './../../utils/site-config'
 
-const PersonSchema = ({ profile }) => {
+const OrganizationSchema = ({ profile }) => {
   let sameAsLinks = profile.link_list.map(link => `"${link.address.url}"`)
 
   return (
     <Helmet>
       <script type="application/ld+json">{`
         {
-          "@context": "https://schema.org/",
-          "@type": "Person",
+          "@context": "https://schema.org",
+          "@type": "Organization",
           "name": "${profile.full_name[0].text}",
-          "description": "${profile.bio[0].text}",
+          "alternateName": "${siteName}",
           "url": "${siteUrl}",
           "email": "${profile.email}",
-          "image": {
+          "logo": {
             "@type": "ImageObject",
             "url": "${profile.logo.url}",
             "width": "${profile.logo.dimensions.width}",
             "height": "${profile.logo.dimensions.height}"
           },
-          "sameAs": [${sameAsLinks}],
-          "jobTitle": "${profile.role[0].text}"
+          "sameAs": [${sameAsLinks}]
         }
-        `}</script>
-      </Helmet>
+      `}</script>
+    </Helmet>
   )
 }
 
-export default PersonSchema
+export default OrganizationSchema

@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /preview/
+
+User-Agent: *
+Disallow: /preview/*
+
+Sitemap: https://johnmantas.com/sitemap.xml

@@ -1,0 +1,14 @@
+﻿/* SITE */
+
+Title: John Mantas Personal Portfolio
+Components: GatsbyJS, Prismic CMS
+Software: Visual Studio Code
+
+
+/* AUTHOR */
+
+Web Developer: John Mantas
+Contact: contact [at] johnmantas.com
+Location: Athens, Greece
+Site: https://johnmantas.com
+Twitter: @johnmantascom

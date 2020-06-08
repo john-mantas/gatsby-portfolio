@@ -110,6 +110,7 @@ export const prismicProfile = graphql`
     logo
     bio
     twitter
+    email
     link_list {
       address {
         ... on PRISMIC__ExternalLink {

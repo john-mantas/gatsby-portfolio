@@ -17,7 +17,10 @@ export default ({ data, location }) => {
   return (
     <>
       <Metadata
+        title="Contact"
+        description="Find me on social media or just send me an e-mail"
         location={location}
+        type='contact'
       />
       <Layout>
         <article className="contact boundary--around">
