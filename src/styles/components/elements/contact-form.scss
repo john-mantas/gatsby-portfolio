@@ -28,8 +28,21 @@
     background: none;
     background: linear-gradient(45deg, #fff1, transparent);
   }
+}
 
-  button {
-    align-self: flex-end;
+.contact-form__response {
+  &.error {
+    color: $color-error;
   }
+
+  &.success {
+    color: $color-success;
+  }
+}
+
+.contact-form__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
 }

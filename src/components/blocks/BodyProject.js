@@ -3,7 +3,7 @@ import React from 'react'
 import { Text, Image, ImageGallery } from '../slices'
 
 const BodyProject = ({ body }) => {
-  let bodyContent = body.map((slice, index) => {
+  let bodyContent = body && body.map((slice, index) => {
     let sliceKey = slice.type + index
 
     switch(slice.type) {

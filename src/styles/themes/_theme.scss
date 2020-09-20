@@ -1,4 +1,27 @@
 @charset 'UTF-8';
+// Global
+// =====================
+.loading {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid;
+  border-top: none;
+  border-radius: 50%;
+  animation: rotate360 0.8s linear infinite;
+}
+
+// Animations
+// =====================
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 // Links
 // =====================
