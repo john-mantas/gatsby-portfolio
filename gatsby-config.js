@@ -1,4 +1,3 @@
-const PRISMIC_PAGES = require('./src/utils/prismic-pages');
 const SITE_CONFIG = require('./src/utils/site-config');
 
 module.exports = {
@@ -20,33 +19,32 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       }
     },
-    {
-      resolve: `gatsby-source-prismic-graphql`,
-      options: {
-        repositoryName: `johnmantas`,
-        defaultLang: `en-us`,
-        pages: PRISMIC_PAGES,
-        sharpKeys: [
-          /image|photo|picture/
-        ]
-      }
-    },
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-source-prismic',
       options: {
-        useMozJpeg: true,
-        stripMetadata: true,
-        defaultQuality: 75
-      }
+        repositoryName: "johnmantas",
+        schemas: {
+          project: require('./schemas/repeatables/project.json'),
+          test: require('./schemas/repeatables/test.json'),
+          metadata: require('./schemas/singletons/metadata.json'),
+          page_not_found: require('./schemas/singletons/page_not_found.json'),
+          profile: require('./schemas/singletons/profile.json'),
+        }
+        // accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        // customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+      },
     },
+
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: ['/preview/', '/preview/*']
+        excludes: ['/preview/', '/preview/*']
       }
     },
     {
@@ -64,13 +62,5 @@ module.exports = {
       }
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
-      options: {
-        analyzerPort: 8001,
-        openAnalyzer: false,
-        logLevel: `error`
-      }
-    }
   ]
 }

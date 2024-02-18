@@ -10,11 +10,11 @@ import Pagination from '../components/common/Pagination'
 import HeaderCategory from '../components/elements/HeaderCategory'
 import CardProject from '../components/elements/CardProject'
 
-export default ({ data, location, pageContext }) => {
-  const PROJECTS = data.prismic.allProjects.edges;
+const AllProjects = ({ data, location, pageContext }) => {
+  const PROJECTS = data.allPrismicProject.edges;
   if (!PROJECTS) return;
 
-  let pageProjects = PROJECTS.map(project => <CardProject key={project.node._meta.uid} item={project} />)
+  let pageProjects = PROJECTS.map(project => <CardProject key={project.node.uid} item={project} />)
 
   return (
     <>
@@ -43,14 +43,14 @@ export default ({ data, location, pageContext }) => {
 }
 
 export const AllProjectsQuery = graphql`
-query AllProjectsQuery($itemsPerPage: Int, $after: String) {
-  prismic {
-    allProjects(first: $itemsPerPage, after: $after, sortBy: meta_firstPublicationDate_DESC) {
-      edges {
-        node {
-          ...prismicProject
-        }
+query AllProjectsQuery($itemsPerPage: Int) {
+  allPrismicProject(sort: {order: DESC, fields: first_publication_date}, limit: $itemsPerPage) {
+    edges {
+      node {
+        ...prismicProject
       }
     }
   }
 }`
+
+export default AllProjects

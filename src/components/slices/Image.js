@@ -3,11 +3,10 @@ import ZoomImage from '../elements/ZoomImage'
 
 const Image = ({ content }) => {
   return (
-    content.fields.map(field => {
+    content.items.map(item => {
       return <ZoomImage
-        key={field.image.url}
-        image={field.image}
-        imageSharp={field.imageSharp}
+        key={item.image.url}
+        image={item.image}
         figureClass="body__image"
       />
     })

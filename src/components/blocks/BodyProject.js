@@ -3,16 +3,14 @@ import React from 'react'
 import { Text, Image, ImageGallery } from '../slices'
 
 const BodyProject = ({ body }) => {
-  let bodyContent = body && body.map((slice, index) => {
-    let sliceKey = slice.type + index
-
-    switch(slice.type) {
+  let bodyContent = body && body.map((slice) => {
+    switch(slice.slice_type) {
       case 'text':
-        return <Text key={sliceKey} content={slice} />
+        return <Text key={slice.id} content={slice} />
       case 'image':
-        return <Image key={sliceKey} content={slice} />
+        return <Image key={slice.id} content={slice} />
       case 'image_gallery':
-        return <ImageGallery key={sliceKey} content={slice} />
+        return <ImageGallery key={slice.id} content={slice} />
         default:
           return null
     }

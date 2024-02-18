@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import '../styles/pages/404.scss'
 
-export default () => {
+const ForOFor = () => {
   return (
     <div className="for-o-for boundary--around">
       <img src="/images/404.png" alt="" />
@@ -20,3 +20,5 @@ export default () => {
     </div>
   )
 }
+
+export default ForOFor

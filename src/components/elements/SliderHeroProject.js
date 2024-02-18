@@ -26,7 +26,6 @@ class SliderHeroProject extends React.Component {
       return <ZoomImage
         key={image.gallery_image.url}
         image={image.gallery_image}
-        imageSharp={image.gallery_imageSharp}
       />
     })
     const sliderOptions = {

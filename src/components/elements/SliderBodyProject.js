@@ -7,7 +7,7 @@ import { ArrowRightThin, ArrowLeftThin } from '../common/Icons'
 
 import '../../styles/components/elements/slider-body-project.scss'
 
-class SliderHeroProject extends React.Component {
+class SliderBodyProject extends React.Component {
   constructor(props) {
     super(props);
     this.previousSlide = this.previousSlide.bind(this);
@@ -43,7 +43,6 @@ class SliderHeroProject extends React.Component {
         <ZoomImage
           key={field.gallery_image.url}
           image={field.gallery_image}
-          imageSharp={field.gallery_imageSharp}
           figcaption={RichText.render(field.image_caption)}
         />
       )
@@ -67,4 +66,4 @@ class SliderHeroProject extends React.Component {
   }
 }
 
-export default SliderHeroProject
+export default SliderBodyProject

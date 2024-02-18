@@ -12,8 +12,8 @@ const PersonSchema = ({ profile }) => {
         {
           "@context": "https://schema.org/",
           "@type": "Person",
-          "name": "${profile.full_name[0].text}",
-          "description": "${profile.bio[0].text}",
+          "name": "${profile.full_name.text}",
+          "description": "${profile.bio.text}",
           "url": "${siteUrl}",
           "email": "${profile.email}",
           "image": {
@@ -23,7 +23,7 @@ const PersonSchema = ({ profile }) => {
             "height": "${profile.logo.dimensions.height}"
           },
           "sameAs": [${sameAsLinks}],
-          "jobTitle": "${profile.role[0].text}"
+          "jobTitle": "${profile.role.text}"
         }
         `}</script>
       </Helmet>

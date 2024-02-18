@@ -1,18 +1,5 @@
 const btoa = require('btoa')
 
-// Workaround for the caching error caused by source plugin using
-// image sharp query for gatsby-image
-// Source: https://github.com/birkir/gatsby-source-prismic-graphql/issues/162
-// TODO: Remove it when there is a fix on the plugin
-const fs = require('fs');
-const dir = "./.cache/caches/gatsby-source-prismic-graphql"
-
-exports.onPreBootstrap = () => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
-}
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -47,10 +34,8 @@ exports.createPages = async ({ graphql, actions }) => {
   // Query data to be used in gatsby actions
   const results = await graphql(`
     {
-      prismic {
-        allProjects {
-          totalCount
-        }
+      allPrismicProject {
+        totalCount
       }
     }
   `)
@@ -61,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create project pages pagination
-  const totalProjects = results.data.prismic.allProjects.totalCount
+  const totalProjects = results.data.allPrismicProject.totalCount
   const projectsPerPage = 6
   const totalProjectPages = Math.ceil(totalProjects / projectsPerPage)
   const baseProjectPath = `/projects/`

@@ -12,7 +12,7 @@ const OrganizationSchema = ({ profile }) => {
         {
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "${profile.full_name[0].text}",
+          "name": "${profile.full_name.text}",
           "alternateName": "${siteName}",
           "url": "${siteUrl}",
           "email": "${profile.email}",

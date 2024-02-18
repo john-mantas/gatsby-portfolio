@@ -15,12 +15,12 @@ import ContactForm from '../components/elements/ContactForm'
 
 import '../styles/pages/index.scss'
 
-export default ({ data, location }) => {
-  const PROFILE = data.prismic.allProfiles.edges.slice(0, 1).pop();
-  const PROJECTS = data.prismic.allProjects.edges;
+const Index = ({ data, location }) => {
+  const PROFILE = data.allPrismicProfile.edges.slice(0, 1).pop();
+  const PROJECTS = data.allPrismicProject.edges;
   if (!PROFILE || !PROJECTS) return null;
 
-  let allProjects = PROJECTS.map(project => <CardProject key={project.node._meta.uid} item={project} />)
+  let allProjects = PROJECTS.map(project => <CardProject key={project.node.uid} item={project} />)
 
   return (
     <>
@@ -60,21 +60,21 @@ export default ({ data, location }) => {
 
 export const query = graphql`
    {
-    prismic {
-      allProfiles {
-        edges {
-          node {
-            ...prismicProfile
-          }
+    allPrismicProfile {
+      edges {
+        node {
+          ...prismicProfile
         }
       }
-      allProjects(first: 4,  sortBy: meta_firstPublicationDate_DESC) {
-        edges {
-          node {
-            ...prismicProject
-          }
+    }
+    allPrismicProject(limit: 4) {
+      edges {
+        node {
+          ...prismicProject
         }
       }
     }
   }
 `
+
+export default Index

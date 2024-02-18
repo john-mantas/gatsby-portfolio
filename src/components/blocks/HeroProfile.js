@@ -9,8 +9,8 @@ const HeroProfile = ({ profile }) => {
   return (
     <section className="hero-profile">
       <Logo />
-      {RichText.render(profile.full_name)}
-      {RichText.render(profile.role)}
+      {RichText.render(profile.data.full_name.raw)}
+      {RichText.render(profile.data.role.raw)}
     </section>
   )
 }

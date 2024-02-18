@@ -1,0 +1,73 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "Slug"
+      }
+    },
+    "full_name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Full Name",
+        "labels": [
+          "name"
+        ]
+      }
+    },
+    "role": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Role"
+      }
+    },
+    "logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Logo"
+      }
+    },
+    "bio": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Bio"
+      }
+    },
+    "twitter": {
+      "type": "Text",
+      "config": {
+        "label": "Twitter",
+        "placeholder": "@twittername"
+      }
+    },
+    "email": {
+      "type": "Text",
+      "config": {
+        "label": "Email",
+        "placeholder": "Email"
+      }
+    },
+    "link_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "address": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "URL"
+            }
+          }
+        },
+        "label": "Links"
+      }
+    }
+  }
+}

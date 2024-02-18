@@ -14,7 +14,7 @@ import OrganizationSchema from './OrganizationSchema'
 import ContactPageSchema from './ContactPageSchema'
 
 const MetaData = ({ doc, title, description, settings, location, type, listItems }) => {
-  title = title || (doc && (doc.meta_title || doc.title[0].text)) || config.siteName
+  title = title || (doc && (doc.meta_title || doc.title.text)) || config.siteName
   description = description || (doc && (doc.meta_description || doc.excerpt)) || config.siteDescription
 
   let image = doc && (doc.featured_image || doc.featured_gallery[0].gallery_image)
@@ -25,8 +25,8 @@ const MetaData = ({ doc, title, description, settings, location, type, listItems
   imageData.alt = (image && image.alt && image.alt !== '') ? image.alt : config.defaultImageAlt
 
   let canonical = url.resolve(config.siteUrl, location.pathname)
-  let profile = settings.prismic.allProfiles.edges[0].node
-  type = type || (doc && doc._meta.type)
+  let profile = settings.allPrismicProfile.edges[0].node.data
+  type = type || (doc && doc.type)
 
   let schemaMarkup
   if (type === 'project') {
@@ -91,12 +91,10 @@ const MetaDataQuery = props => (
   <StaticQuery 
     query={graphql`
       query MetadataProfiles {
-        prismic {
-          allProfiles {
-            edges {
-              node {
-                ...prismicProfile
-              }
+        allPrismicProfile {
+          edges {
+            node {
+              ...prismicProfile
             }
           }
         }

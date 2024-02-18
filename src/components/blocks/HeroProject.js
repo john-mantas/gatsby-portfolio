@@ -7,7 +7,7 @@ import '../../styles/components/blocks/hero-project.scss'
 
 const HeroProject = ({ item }) => {
   let typeHandle = item.type.replace(' ', '-').toLowerCase()
-  let hasGallery = item.featured_gallery[0].gallery_image && item.featured_gallery[0].gallery_image.url !== ''
+  let hasGallery = item.featured_gallery.length > 0 && item.featured_gallery[0].gallery_image && item.featured_gallery[0].gallery_image.url
 
   return (
     <section className={`hero-project project--${typeHandle}`}>
@@ -15,7 +15,7 @@ const HeroProject = ({ item }) => {
         <header className="hero-project__header">
           <div className="hero-project__header-content">
             <span className="project--type">{item.type}</span>
-            <h1 className="hero-project__title">{item.title[0].text}</h1>
+            <h1 className="hero-project__title">{item.title.text}</h1>
             <p className="hero-project__description">{item.excerpt}</p>
             <div className="hero-project__links">
               {item.project_url && <a href={item.project_url.url} title="Code files" className="link--dot" target="_blank" rel="nofollow noopener noreferrer">Read the code</a>}
@@ -29,7 +29,6 @@ const HeroProject = ({ item }) => {
             />
           : <ZoomImage
               image={item.featured_image}
-              imageSharp={item.featured_imageSharp}
               figureClass='hero-project__featured-media'
             />
         }

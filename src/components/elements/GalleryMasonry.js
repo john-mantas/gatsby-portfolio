@@ -10,8 +10,7 @@ const GalleryMasonry = ({ fields }) => {
       <ZoomImage
         key={field.gallery_image.url}
         image={field.gallery_image}
-        imageSharp={field.gallery_imageSharp}
-        figcaption={RichText.render(field.image_caption)}
+        figcaption={RichText.render(field.image_caption.text !== '' ? field.image_caption.raw : null)}
       />
     )
   })

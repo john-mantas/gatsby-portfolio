@@ -13,9 +13,9 @@ const CreativeWorkSchema = ({ title, description, image, profile, canonical }) =
           "@context": "http://schema.org",
           "@type": "CreativeWork",
           "name": "${title}",
-          "alternateName": "${title} | ${profile.full_name[0].text}",
+          "alternateName": "${title} | ${profile.full_name.text}",
           "headline": "${title}",
-          "alternativeHeadline": "${title} | ${profile.full_name[0].text}",
+          "alternativeHeadline": "${title} | ${profile.full_name.text}",
           "description": "${description}",
           "image": {
             "@type": "ImageObject",
@@ -27,7 +27,7 @@ const CreativeWorkSchema = ({ title, description, image, profile, canonical }) =
           "author": {
             "@context": "https://schema.org/",
             "@type": "Person",
-            "name": "${profile.full_name[0].text}",
+            "name": "${profile.full_name.text}",
             "url": "${siteUrl}",
             "image": {
               "@type": "ImageObject",
@@ -36,7 +36,7 @@ const CreativeWorkSchema = ({ title, description, image, profile, canonical }) =
               "height": "${profile.logo.dimensions.height}"
             },
             "sameAs": [${sameAsLinks}],
-            "jobTitle": "${profile.role[0].text}"
+            "jobTitle": "${profile.role.text}"
           },
           "url": "${canonical}"
         }

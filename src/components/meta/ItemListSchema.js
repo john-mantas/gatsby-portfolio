@@ -5,13 +5,11 @@ import url from 'url'
 import { siteUrl } from '../../utils/site-config'
 
 const ItemListSchema = ({ title, description, image, canonical, listItems }) => {
-  console.log(listItems)
-
   let itemListElement = listItems.items.map((item, index) => `
     {
       "@type": "ListItem",
       "position": ${index + 1},
-      "url": "${url.resolve(siteUrl, item.node._meta.uid)}"
+      "url": "${url.resolve(siteUrl, item.node.uid)}"
     }
   `)
   return (

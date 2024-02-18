@@ -1,0 +1,216 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title",
+        "placeholder": "Title"
+      }
+    },
+    "excerpt": {
+      "type": "Text",
+      "config": {
+        "label": "Excerpt"
+      }
+    },
+    "featured_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Featured image"
+      }
+    },
+    "featured_gallery": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "gallery_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Gallery image"
+            }
+          }
+        },
+        "label": "Featured Gallery"
+      }
+    },
+    "featured": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "no",
+        "placeholder_true": "yes",
+        "default_value": false,
+        "label": "Featured"
+      }
+    },
+    "project_url": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Project URL",
+        "placeholder": "Project URL"
+      }
+    },
+    "live_url": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Live URL"
+      }
+    },
+    "type": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Website",
+          "Game",
+          "Web App",
+          "Code"
+        ],
+        "default_value": "Website",
+        "label": "Type",
+        "placeholder": "Type"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "image": [],
+          "image_gallery": []
+        },
+        "choices": {
+          "text": {
+            "type": "Slice",
+            "fieldset": "Text",
+            "description": "Rich Text Section",
+            "icon": "text_fields",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "text",
+                  "placeholder": "Your content here"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_gallery": {
+            "type": "Slice",
+            "fieldset": "Image Gallery",
+            "description": "Image Gallery with a title and a caption for each image",
+            "icon": "photo_library",
+            "non-repeat": {
+              "gallery_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Gallery Title"
+                }
+              },
+              "gallery_subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Gallery Subtitle"
+                }
+              }
+            },
+            "repeat": {
+              "image_caption": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Image caption",
+                  "placeholder": "Image caption"
+                }
+              },
+              "gallery_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Gallery Image"
+                }
+              }
+            },
+            "display": "grid"
+          },
+          "image": {
+            "type": "Slice",
+            "fieldset": "Image",
+            "description": "Single Image",
+            "icon": "insert_photo",
+            "display": "grid",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "SEO": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Slug",
+        "placeholder": "Slug"
+      }
+    },
+    "meta_title": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Title",
+        "placeholder": "Meta Title"
+      }
+    },
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Description",
+        "placeholder": "Meta Description"
+      }
+    },
+    "canonical": {
+      "type": "Link",
+      "config": {
+        "label": "Canonical",
+        "placeholder": "Canonical"
+      }
+    }
+  },
+  "Code Injection": {
+    "code_for_head": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "preformatted",
+        "label": "Code for Head"
+      }
+    },
+    "code_for_body": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "preformatted",
+        "label": "Code for body"
+      }
+    }
+  }
+}

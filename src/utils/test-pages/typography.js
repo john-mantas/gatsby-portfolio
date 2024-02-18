@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../../components/common/Layout'
 
-export default () => {
+const Typography = () => {
   return (
     <Layout>
       <h1>Heading 1</h1>
@@ -100,3 +100,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default Typography

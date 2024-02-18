@@ -5,17 +5,17 @@ import url from 'url'
 import { siteUrl } from '../../utils/site-config'
 
 const ItemListSchema = ({ title, description, image, canonical, listItems }) => {
-  let hasPartItems = listItems.items.map((item, index) => `
+  let hasPartItems = listItems.items.map((item) => `
     {
       "@type": "CreativeWork",
-      "name": "${item.node.title[0].text}",
+      "name": "${item.node.data.title.text}",
       "image": {
         "@type": "ImageObject",
-        "url": "${item.node.featured_image.url}",
-        "width": "${item.node.featured_image.dimensions.width}",
-        "height": "${item.node.featured_image.dimensions.height}"
+        "url": "${item.node.data.featured_image.url}",
+        "width": "${item.node.data.featured_image.dimensions.width}",
+        "height": "${item.node.data.featured_image.dimensions.height}"
       },
-      "url": "${url.resolve(siteUrl, item.node._meta.uid)}"
+      "url": "${url.resolve(siteUrl, item.node.uid)}"
     }
   `)
   
